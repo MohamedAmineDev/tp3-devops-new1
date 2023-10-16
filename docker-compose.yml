@@ -1,4 +1,4 @@
-version: "3"
+version: '3'
 services:
   web-app:
     image: my-school-web-app
@@ -16,9 +16,9 @@ services:
   db:
     image: mysql:5.7
     environment:
-      MYSQL_DATABASE: "school_db"
-      MYSQL_ROOT_USERNAME: "root"
-      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: 'school_db'
+      MYSQL_ROOT_USERNAME: 'root'
+      MYSQL_ROOT_PASSWORD: 'root'
     ports:
       - '0.0.0.0:3307:3306'
     restart: always
