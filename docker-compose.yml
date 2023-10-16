@@ -3,7 +3,7 @@ services:
   web-app:
     image: my-school-web-app
     ports:
-      - 8089:8089
+      - 0.0.0.0:8089:8089
     restart: always
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3307/school_db?createDatabaseIfNotExist=true
@@ -20,7 +20,7 @@ services:
       MYSQL_ROOT_USERNAME: "root"
       MYSQL_ROOT_PASSWORD: "root"
     ports:
-      - 3307:3306
+      - 0.0.0.0:3307:3306
     restart: always
     volumes:
       - mysql:/var/lib/mysql
