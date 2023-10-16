@@ -1,7 +1,7 @@
 version: "3"
 services:
   web-app:
-    image: my-web-app
+    image: my-school-web-app
     ports:
       - 8089:8089
     restart: always
