@@ -23,6 +23,6 @@ services:
       - '0.0.0.0:3307:3306'
     restart: always
     volumes:
-      - db:/var/lib/mysql
+      - school_db:/var/lib/mysql
 volumes:
-  db:
+  school_db:
