@@ -5,6 +5,14 @@ services:
     ports:
       - 8091:8091
     repeat: always
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3307/school_db
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=root
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - SPRING_DATASOURCE_DRIVER_CLASS_NAME=com.mysql.cj.jdbc.Driver
+    depends_on:
+      - db
   mysql:
     image: mysql:5.7
     environment:
