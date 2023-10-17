@@ -3,26 +3,18 @@ services:
   web-app:
     image: my-school-web-app
     ports:
-      - '0.0.0.0:8089:8089'
-    restart: always
-    environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3307/school_db
-      - SPRING_DATASOURCE_USERNAME=root
-      - SPRING_DATASOURCE_PASSWORD=root
-      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
-      - SPRING_DATASOURCE_DRIVER_CLASS_NAME=com.mysql.cj.jdbc.Driver
-    depends_on:
-      - db
-  db:
+      - 8091:8091
+    repeat: always
+  mysql:
     image: mysql:5.7
     environment:
       MYSQL_DATABASE: 'school_db'
       MYSQL_ROOT_USERNAME: 'root'
       MYSQL_ROOT_PASSWORD: 'root'
     ports:
-      - '0.0.0.0:3307:3306'
-    restart: always
-    volumes:
+      - 3307:3306
+    repeat: always
+    volume:
       - school_db:/var/lib/mysql
 volumes:
   school_db:
